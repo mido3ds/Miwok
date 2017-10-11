@@ -7,22 +7,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.example.android.miwok.Words.Word;
+
 import static android.media.AudioManager.AUDIOFOCUS_LOSS_TRANSIENT;
 import static android.media.AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK;
 import static android.media.AudioManager.AUDIOFOCUS_REQUEST_GRANTED;
 
-public class OnItemClickListener implements AdapterView.OnItemClickListener {
-
+public class OnWordItemClickListener implements AdapterView.OnItemClickListener {
+    // TODO: remove this class and make WordSoundPlayer.ClickListener
     private final Context context;
-    private final int wordMedia[];
+    private final Word[] words;
     private final AudioManager audioManager;
-    private final MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mediaPlayer) {
-            mediaPlayer.release();
-            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
-        }
-    };
     private MediaPlayer mediaPlayer;
     private final AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
 
@@ -53,10 +48,17 @@ public class OnItemClickListener implements AdapterView.OnItemClickListener {
         }
 
     };
+    private final MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            mediaPlayer.release();
+            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
+        }
+    };
 
-    public OnItemClickListener(Context context, int[] wordMedia) {
+    public OnWordItemClickListener(Context context, Word[] words) {
         this.context = context;
-        this.wordMedia = wordMedia;
+        this.words = words;
 
         audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
     }
@@ -64,7 +66,7 @@ public class OnItemClickListener implements AdapterView.OnItemClickListener {
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-        mediaPlayer = MediaPlayer.create(context, wordMedia[position]);
+        mediaPlayer = MediaPlayer.create(context, words[position].getSoundId());
 
         // get audio focus
         int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,

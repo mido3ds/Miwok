@@ -7,7 +7,6 @@ import com.example.android.miwok.Fragments.NumbersFragment;
 import com.example.android.miwok.R;
 
 public class NumbersActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -14,13 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.android.miwok.R;
+import com.example.android.miwok.Words.Word;
 
-import java.util.List;
-
-public class WordViewAdapter extends ArrayAdapter<WordView> {
+public class WordItemAdapter extends ArrayAdapter<Word> {
     private final int colorId;
 
-    public WordViewAdapter(@NonNull Context context, @NonNull List<WordView> objects, int colorId) {
+    public WordItemAdapter(@NonNull Context context, @NonNull Word[] objects, int colorId) {
         super(context, R.layout.item_of_words_list, objects);
         this.colorId = colorId;
     }
@@ -34,17 +33,17 @@ public class WordViewAdapter extends ArrayAdapter<WordView> {
             view = inflater.inflate(R.layout.item_of_words_list, null);
         }
 
-        WordView wordView = getItem(position);
+        Word word = getItem(position);
         TextView miwokTextView = (TextView) view.findViewById(R.id.miwok_word);
         TextView englishTextView = (TextView) view.findViewById(R.id.english_word);
         ImageView iconImageView = (ImageView) view.findViewById(R.id.thumb);
         FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.linear_sub_list);
 
         frameLayout.setBackgroundColor(ContextCompat.getColor(getContext(), colorId));
-        miwokTextView.setText(wordView.getMiwokTranslation());
-        englishTextView.setText(wordView.getDefaultTranslation());
-        if (wordView.hasImage()) {
-            iconImageView.setImageResource(wordView.getImageId());
+        miwokTextView.setText(word.getMiwokTranslation());
+        englishTextView.setText(word.getDefaultTranslation());
+        if (word.hasImage()) {
+            iconImageView.setImageResource(word.getImageId());
         } else {
             ((LinearLayout) view).removeView(iconImageView);
         }

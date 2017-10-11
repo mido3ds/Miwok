@@ -7,7 +7,6 @@ import com.example.android.miwok.Fragments.ColorsFragment;
 import com.example.android.miwok.R;
 
 public class ColorsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

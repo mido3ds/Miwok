@@ -7,7 +7,6 @@ import com.example.android.miwok.Fragments.PhrasesFragment;
 import com.example.android.miwok.R;
 
 public class PhrasesActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -7,7 +7,6 @@ import com.example.android.miwok.Fragments.FamilyFragment;
 import com.example.android.miwok.R;
 
 public class FamilyActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
