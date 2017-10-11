@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.example.android.miwok.ListViewUtilities.OnItemClickListener;
-import com.example.android.miwok.R;
 import com.example.android.miwok.ListViewUtilities.WordView;
 import com.example.android.miwok.ListViewUtilities.WordViewAdapter;
+import com.example.android.miwok.R;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,8 +22,8 @@ public class ColorsActivity extends AppCompatActivity {
             new WordView("gray", "ṭopoppi", R.drawable.color_gray),
             new WordView("black", "kululli", R.drawable.color_black),
             new WordView("white", "kelelli", R.drawable.color_white),
-            new WordView("dusty yellow" ,"ṭopiisә", R.drawable.color_dusty_yellow),
-            new WordView("mustard yellow" ,"chiwiiṭә", R.drawable.color_mustard_yellow)
+            new WordView("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow),
+            new WordView("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow)
     );
 
     private final int[] wordMedia = {

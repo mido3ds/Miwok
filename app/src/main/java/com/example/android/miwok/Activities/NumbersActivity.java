@@ -55,4 +55,5 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setAdapter(wordViewAdapter);
         listView.setOnItemClickListener(new OnItemClickListener(this, wordMedia));
     }
+
 }

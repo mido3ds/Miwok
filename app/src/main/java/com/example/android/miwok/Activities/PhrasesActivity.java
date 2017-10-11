@@ -16,16 +16,16 @@ import java.util.List;
 public class PhrasesActivity extends AppCompatActivity {
 
     private final List<WordView> wordViews = Arrays.asList(
-        new WordView("Where are you going?" ,"minto wuksus"),
-        new WordView("What is your name?" ,"tinnә oyaase'nә"),
-        new WordView("My name is..." ,"oyaaset..."),
-        new WordView("How are you feeling?" ,"michәksәs?"),
-        new WordView("I’m feeling good." ,"kuchi achit"),
-        new WordView("Are you coming?" ,"әәnәs'aa?"),
-        new WordView("Yes, I’m coming." ,"hәә’ әәnәm"),
-        new WordView("I’m coming." ,"әәnәm"),
-        new WordView("Let’s go." ,"yoowutis"),
-        new WordView("Come here." ,"әnni'nem")
+            new WordView("Where are you going?", "minto wuksus"),
+            new WordView("What is your name?", "tinnә oyaase'nә"),
+            new WordView("My name is...", "oyaaset..."),
+            new WordView("How are you feeling?", "michәksәs?"),
+            new WordView("I’m feeling good.", "kuchi achit"),
+            new WordView("Are you coming?", "әәnәs'aa?"),
+            new WordView("Yes, I’m coming.", "hәә’ әәnәm"),
+            new WordView("I’m coming.", "әәnәm"),
+            new WordView("Let’s go.", "yoowutis"),
+            new WordView("Come here.", "әnni'nem")
     );
 
     private final int[] wordMedia = {

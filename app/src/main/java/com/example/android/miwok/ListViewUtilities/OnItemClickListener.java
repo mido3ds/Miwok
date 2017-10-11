@@ -13,39 +13,17 @@ import static android.media.AudioManager.AUDIOFOCUS_REQUEST_GRANTED;
 
 public class OnItemClickListener implements AdapterView.OnItemClickListener {
 
-    private MediaPlayer mediaPlayer;
-
     private final Context context;
     private final int wordMedia[];
     private final AudioManager audioManager;
-
-    public OnItemClickListener(Context context, int[] wordMedia) {
-        this.context = context;
-        this.wordMedia = wordMedia;
-
-        audioManager = (AudioManager) context.getSystemService(context.AUDIO_SERVICE);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-
-        mediaPlayer = MediaPlayer.create(context, wordMedia[position]);
-
-        // get audio focus
-        int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
-                AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-
-        if (result == AUDIOFOCUS_REQUEST_GRANTED) {
-
-            mediaPlayer.start();
-            mediaPlayer.setOnCompletionListener(onCompletionListener);
-
-        } else {
-            Log.e("AudioFocus", "AudioFocus is not granted, cant play sound");
+    private final MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            mediaPlayer.release();
+            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
         }
-
-    }
-
+    };
+    private MediaPlayer mediaPlayer;
     private final AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
 
         @Override
@@ -76,12 +54,31 @@ public class OnItemClickListener implements AdapterView.OnItemClickListener {
 
     };
 
-    private final MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mediaPlayer) {
-            mediaPlayer.release();
-            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
+    public OnItemClickListener(Context context, int[] wordMedia) {
+        this.context = context;
+        this.wordMedia = wordMedia;
+
+        audioManager = (AudioManager) context.getSystemService(context.AUDIO_SERVICE);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+        mediaPlayer = MediaPlayer.create(context, wordMedia[position]);
+
+        // get audio focus
+        int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
+                AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+
+        if (result == AUDIOFOCUS_REQUEST_GRANTED) {
+
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(onCompletionListener);
+
+        } else {
+            Log.e("AudioFocus", "AudioFocus is not granted, cant play sound");
         }
-    };
+
+    }
 
 }
