@@ -14,6 +14,8 @@ import com.example.android.miwok.R;
 import com.example.android.miwok.Words.ColorWords;
 
 public class ColorsFragment extends Fragment {
+    private OnWordItemClickListener onWordItemClickListener;
+
     public ColorsFragment() {
         super();
     }
@@ -28,7 +30,9 @@ public class ColorsFragment extends Fragment {
         );
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordItemAdapter);
-        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), ColorWords.WORDS));
+
+        onWordItemClickListener = new OnWordItemClickListener(getContext(), ColorWords.WORDS);
+        listView.setOnItemClickListener(onWordItemClickListener);
 
         return rootView;
     }
@@ -37,6 +41,6 @@ public class ColorsFragment extends Fragment {
     public void onStop() {
         super.onStop();
 
-        // TODO: release mediaPlayer from OnWordItemClickListener
+        onWordItemClickListener.stopPlayingMedia();
     }
 }

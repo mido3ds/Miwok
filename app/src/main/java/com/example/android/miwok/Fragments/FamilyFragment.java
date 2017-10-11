@@ -14,6 +14,8 @@ import com.example.android.miwok.R;
 import com.example.android.miwok.Words.FamiltyWords;
 
 public class FamilyFragment extends Fragment {
+    private OnWordItemClickListener onWordItemClickListener;
+
     public FamilyFragment() {
         super();
     }
@@ -26,7 +28,9 @@ public class FamilyFragment extends Fragment {
         WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), FamiltyWords.WORDS, R.color.category_family);
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordItemAdapter);
-        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), FamiltyWords.WORDS));
+
+        onWordItemClickListener = new OnWordItemClickListener(getContext(), FamiltyWords.WORDS);
+        listView.setOnItemClickListener(onWordItemClickListener);
 
         return rootView;
     }
@@ -34,5 +38,6 @@ public class FamilyFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
+        onWordItemClickListener.stopPlayingMedia();
     }
 }

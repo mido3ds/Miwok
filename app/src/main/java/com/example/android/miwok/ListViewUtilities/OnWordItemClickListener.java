@@ -14,7 +14,6 @@ import static android.media.AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK;
 import static android.media.AudioManager.AUDIOFOCUS_REQUEST_GRANTED;
 
 public class OnWordItemClickListener implements AdapterView.OnItemClickListener {
-    // TODO: remove this class and make WordSoundPlayer.ClickListener
     private final Context context;
     private final Word[] words;
     private final AudioManager audioManager;
@@ -81,6 +80,12 @@ public class OnWordItemClickListener implements AdapterView.OnItemClickListener 
             Log.e("AudioFocus", "AudioFocus is not granted, cant play sound");
         }
 
+    }
+
+    public void stopPlayingMedia() {
+        if (mediaPlayer != null) {
+            onCompletionListener.onCompletion(mediaPlayer);
+        }
     }
 
 }

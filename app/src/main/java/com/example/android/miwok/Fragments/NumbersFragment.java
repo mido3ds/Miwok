@@ -14,6 +14,8 @@ import com.example.android.miwok.R;
 import com.example.android.miwok.Words.NumberWords;
 
 public class NumbersFragment extends Fragment {
+    private OnWordItemClickListener onWordItemClickListener;
+
     public NumbersFragment() {
         super();
     }
@@ -26,7 +28,9 @@ public class NumbersFragment extends Fragment {
         WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), NumberWords.WORDS, R.color.category_numbers);
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordItemAdapter);
-        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), NumberWords.WORDS));
+
+        onWordItemClickListener = new OnWordItemClickListener(getContext(), NumberWords.WORDS);
+        listView.setOnItemClickListener(onWordItemClickListener);
 
         return rootView;
     }
@@ -34,5 +38,6 @@ public class NumbersFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
+        onWordItemClickListener.stopPlayingMedia();
     }
 }
