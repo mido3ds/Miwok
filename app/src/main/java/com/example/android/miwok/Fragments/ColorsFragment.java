@@ -21,7 +21,7 @@ public class ColorsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.words_list, container, false);
+        View rootView = inflater.inflate(R.layout.list_words, container, false);
 
         WordItemAdapter wordItemAdapter = new WordItemAdapter(
                 getContext(), ColorWords.words, R.color.category_colors

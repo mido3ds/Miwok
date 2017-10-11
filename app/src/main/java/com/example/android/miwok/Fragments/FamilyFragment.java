@@ -21,7 +21,7 @@ public class FamilyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.words_list, container, false);
+        View rootView = inflater.inflate(R.layout.list_words, container, false);
 
         WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), FamiltyWords.words, R.color.category_family);
         ListView listView = (ListView) rootView.findViewById(R.id.list);

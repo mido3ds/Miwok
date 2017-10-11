@@ -27,7 +27,7 @@ public class PhrasesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.words_list, container, false);
+        View rootView = inflater.inflate(R.layout.list_words, container, false);
 
         WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), PhraseWords.words, R.color.category_phrases);
         ListView listView = (ListView) rootView.findViewById(R.id.list);

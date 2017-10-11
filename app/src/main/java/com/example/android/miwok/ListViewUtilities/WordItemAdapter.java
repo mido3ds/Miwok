@@ -20,7 +20,7 @@ public class WordItemAdapter extends ArrayAdapter<Word> {
     private final int colorId;
 
     public WordItemAdapter(@NonNull Context context, @NonNull Word[] objects, int colorId) {
-        super(context, R.layout.item_of_words_list, objects);
+        super(context, R.layout.item_of_list_words, objects);
         this.colorId = colorId;
     }
 
@@ -30,7 +30,7 @@ public class WordItemAdapter extends ArrayAdapter<Word> {
         View view = convertView;
         if (view == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            view = inflater.inflate(R.layout.item_of_words_list, null);
+            view = inflater.inflate(R.layout.item_of_list_words, null);
         }
 
         Word word = getItem(position);
