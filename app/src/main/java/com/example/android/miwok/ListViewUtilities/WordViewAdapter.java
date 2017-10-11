@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,9 +38,9 @@ public class WordViewAdapter extends ArrayAdapter<WordView> {
         TextView miwokTextView = (TextView) view.findViewById(R.id.miwok_word);
         TextView englishTextView = (TextView) view.findViewById(R.id.english_word);
         ImageView iconImageView = (ImageView) view.findViewById(R.id.thumb);
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.linear_sub_list);
+        FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.linear_sub_list);
 
-        linearLayout.setBackgroundColor(ContextCompat.getColor(getContext(), colorId));
+        frameLayout.setBackgroundColor(ContextCompat.getColor(getContext(), colorId));
         miwokTextView.setText(wordView.getMiwokTranslation());
         englishTextView.setText(wordView.getDefaultTranslation());
         if (wordView.hasImage()) {
