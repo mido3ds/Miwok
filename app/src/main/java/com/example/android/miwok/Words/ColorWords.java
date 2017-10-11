@@ -2,10 +2,6 @@ package com.example.android.miwok.Words;
 
 import com.example.android.miwok.R;
 
-/**
- * Created by Mido on 10/11/17.
- */
-
 public class ColorWords {
     public static final Word[] WORDS = {
             new Word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red),

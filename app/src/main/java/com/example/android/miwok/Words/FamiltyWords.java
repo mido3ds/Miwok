@@ -2,10 +2,6 @@ package com.example.android.miwok.Words;
 
 import com.example.android.miwok.R;
 
-/**
- * Created by Mido on 10/11/17.
- */
-
 public class FamiltyWords {
     public static final Word[] WORDS = {
             new Word("father", "әpә", R.drawable.family_father, R.raw.family_father),

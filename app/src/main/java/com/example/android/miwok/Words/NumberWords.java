@@ -2,10 +2,6 @@ package com.example.android.miwok.Words;
 
 import com.example.android.miwok.R;
 
-/**
- * Created by Mido on 10/11/17.
- */
-
 public class NumberWords {
     public static final Word[] WORDS = {
             new Word("one", "lutti", R.drawable.number_one, R.raw.number_one),

@@ -13,13 +13,7 @@ import com.example.android.miwok.ListViewUtilities.WordItemAdapter;
 import com.example.android.miwok.R;
 import com.example.android.miwok.Words.PhraseWords;
 
-/**
- * Created by Mido on 10/11/17.
- */
-
 public class PhrasesFragment extends Fragment {
-
-
     public PhrasesFragment() {
         super();
     }

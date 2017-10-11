@@ -18,6 +18,13 @@ public class OnWordItemClickListener implements AdapterView.OnItemClickListener 
     private final Context context;
     private final Word[] words;
     private final AudioManager audioManager;
+    private final MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            mediaPlayer.release();
+            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
+        }
+    };
     private MediaPlayer mediaPlayer;
     private final AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
 
@@ -47,13 +54,6 @@ public class OnWordItemClickListener implements AdapterView.OnItemClickListener 
             }
         }
 
-    };
-    private final MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mediaPlayer) {
-            mediaPlayer.release();
-            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
-        }
     };
 
     public OnWordItemClickListener(Context context, Word[] words) {

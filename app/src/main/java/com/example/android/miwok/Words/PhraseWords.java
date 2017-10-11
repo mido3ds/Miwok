@@ -2,10 +2,6 @@ package com.example.android.miwok.Words;
 
 import com.example.android.miwok.R;
 
-/**
- * Created by Mido on 10/11/17.
- */
-
 public class PhraseWords {
     public static final Word[] WORDS = {
             new Word("Where are you going?", "minto wuksus", R.raw.phrase_where_are_you_going),
