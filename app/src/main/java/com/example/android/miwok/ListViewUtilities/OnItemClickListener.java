@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.example.android.miwok.ListViewUtilities;
 
 import android.content.Context;
 import android.media.AudioManager;

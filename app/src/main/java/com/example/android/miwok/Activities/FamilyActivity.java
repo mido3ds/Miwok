@@ -3,13 +3,12 @@ package com.example.android.miwok.Activities;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.android.miwok.ListViewUtilities.OnItemClickListener;
+import com.example.android.miwok.ListViewUtilities.WordView;
+import com.example.android.miwok.ListViewUtilities.WordViewAdapter;
 import com.example.android.miwok.R;
-import com.example.android.miwok.WordView;
-import com.example.android.miwok.WordViewAdapter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -54,19 +53,6 @@ public class FamilyActivity extends AppCompatActivity {
         WordViewAdapter wordViewAdapter = new WordViewAdapter(this, wordViews, R.color.category_family);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(wordViewAdapter);
-
-        // set sound
-        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-            public void onItemClick(AdapterView parent, View v, int position, long id) {
-                mediaPlayer = MediaPlayer.create(FamilyActivity.this, wordMedia[position]);
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        mediaPlayer.release();
-                    }
-                });
-            }
-        });
+        listView.setOnItemClickListener(new OnItemClickListener(this, wordMedia));
     }
 }

@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.example.android.miwok.OnItemClickListener;
+import com.example.android.miwok.ListViewUtilities.OnItemClickListener;
 import com.example.android.miwok.R;
-import com.example.android.miwok.WordView;
-import com.example.android.miwok.WordViewAdapter;
+import com.example.android.miwok.ListViewUtilities.WordView;
+import com.example.android.miwok.ListViewUtilities.WordViewAdapter;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.example.android.miwok.ListViewUtilities;
 
 public class WordView {
     private final String defaultTranslation;
