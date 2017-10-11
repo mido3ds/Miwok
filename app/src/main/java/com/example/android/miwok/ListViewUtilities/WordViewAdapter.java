@@ -21,7 +21,7 @@ public class WordViewAdapter extends ArrayAdapter<WordView> {
     private final int colorId;
 
     public WordViewAdapter(@NonNull Context context, @NonNull List<WordView> objects, int colorId) {
-        super(context, R.layout.list_item, objects);
+        super(context, R.layout.item_of_words_list, objects);
         this.colorId = colorId;
     }
 
@@ -31,7 +31,7 @@ public class WordViewAdapter extends ArrayAdapter<WordView> {
         View view = convertView;
         if (view == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            view = inflater.inflate(R.layout.list_item, null);
+            view = inflater.inflate(R.layout.item_of_words_list, null);
         }
 
         WordView wordView = getItem(position);

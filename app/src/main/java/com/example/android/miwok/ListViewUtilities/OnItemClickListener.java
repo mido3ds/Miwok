@@ -58,7 +58,7 @@ public class OnItemClickListener implements AdapterView.OnItemClickListener {
         this.context = context;
         this.wordMedia = wordMedia;
 
-        audioManager = (AudioManager) context.getSystemService(context.AUDIO_SERVICE);
+        audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
     }
 
     @Override
