@@ -23,10 +23,10 @@ public class NumbersFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.list_words, container, false);
 
-        WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), NumberWords.words, R.color.category_numbers);
+        WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), NumberWords.WORDS, R.color.category_numbers);
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordItemAdapter);
-        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), NumberWords.words));
+        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), NumberWords.WORDS));
 
         return rootView;
     }

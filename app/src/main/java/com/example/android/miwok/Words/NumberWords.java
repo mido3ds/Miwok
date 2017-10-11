@@ -7,7 +7,7 @@ import com.example.android.miwok.R;
  */
 
 public class NumberWords {
-    public static final Word[] words = {
+    public static final Word[] WORDS = {
             new Word("one", "lutti", R.drawable.number_one, R.raw.number_one),
             new Word("two", "ottiko", R.drawable.number_two, R.raw.number_two),
             new Word("three", "tolookosu", R.drawable.number_three, R.raw.number_three),

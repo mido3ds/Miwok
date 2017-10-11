@@ -7,7 +7,7 @@ import com.example.android.miwok.R;
  */
 
 public class FamiltyWords {
-    public static final Word[] words = {
+    public static final Word[] WORDS = {
             new Word("father", "әpә", R.drawable.family_father, R.raw.family_father),
             new Word("mother", "әṭa", R.drawable.family_mother, R.raw.family_mother),
             new Word("son", "angsi", R.drawable.family_son, R.raw.family_son),

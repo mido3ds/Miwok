@@ -7,7 +7,7 @@ import com.example.android.miwok.R;
  */
 
 public class PhraseWords {
-    public static final Word[] words = {
+    public static final Word[] WORDS = {
             new Word("Where are you going?", "minto wuksus", R.raw.phrase_where_are_you_going),
             new Word("What is your name?", "tinnә oyaase'nә", R.raw.phrase_what_is_your_name),
             new Word("My name is...", "oyaaset...", R.raw.phrase_my_name_is),

@@ -24,11 +24,11 @@ public class ColorsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.list_words, container, false);
 
         WordItemAdapter wordItemAdapter = new WordItemAdapter(
-                getContext(), ColorWords.words, R.color.category_colors
+                getContext(), ColorWords.WORDS, R.color.category_colors
         );
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordItemAdapter);
-        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), ColorWords.words));
+        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), ColorWords.WORDS));
 
         return rootView;
     }

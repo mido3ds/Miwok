@@ -23,10 +23,10 @@ public class FamilyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.list_words, container, false);
 
-        WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), FamiltyWords.words, R.color.category_family);
+        WordItemAdapter wordItemAdapter = new WordItemAdapter(getContext(), FamiltyWords.WORDS, R.color.category_family);
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordItemAdapter);
-        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), FamiltyWords.words));
+        listView.setOnItemClickListener(new OnWordItemClickListener(getContext(), FamiltyWords.WORDS));
 
         return rootView;
     }

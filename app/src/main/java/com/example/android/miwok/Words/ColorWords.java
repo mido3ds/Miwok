@@ -7,7 +7,7 @@ import com.example.android.miwok.R;
  */
 
 public class ColorWords {
-    public static final Word[] words = {
+    public static final Word[] WORDS = {
             new Word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red),
             new Word("green", "chokokki", R.drawable.color_green, R.raw.color_green),
             new Word("brown", "ṭakaakki", R.drawable.color_brown, R.raw.color_brown),
