@@ -3,10 +3,9 @@ package com.example.android.miwok.Activities;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.android.miwok.OnItemClickListener;
 import com.example.android.miwok.R;
 import com.example.android.miwok.WordView;
 import com.example.android.miwok.WordViewAdapter;
@@ -52,19 +51,8 @@ public class ColorsActivity extends AppCompatActivity {
         );
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(wordViewAdapter);
+        listView.setOnItemClickListener(new OnItemClickListener(this, wordMedia));
 
-        // set sound
-        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-            public void onItemClick(AdapterView parent, View v, int position, long id) {
-                mediaPlayer = MediaPlayer.create(ColorsActivity.this, wordMedia[position]);
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        mediaPlayer.release();
-                    }
-                });
-            }
-        });
     }
+
 }
