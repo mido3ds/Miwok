@@ -3,7 +3,6 @@ package com.example.android.miwok.ViewPagerUtilites;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
 import com.example.android.miwok.Fragments.ColorsFragment;
 import com.example.android.miwok.Fragments.FamilyFragment;
 import com.example.android.miwok.Fragments.NumbersFragment;

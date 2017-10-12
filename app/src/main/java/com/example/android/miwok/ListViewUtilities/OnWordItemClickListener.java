@@ -6,12 +6,9 @@ import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-
 import com.example.android.miwok.Words.Word;
 
-import static android.media.AudioManager.AUDIOFOCUS_LOSS_TRANSIENT;
-import static android.media.AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK;
-import static android.media.AudioManager.AUDIOFOCUS_REQUEST_GRANTED;
+import static android.media.AudioManager.*;
 
 public class OnWordItemClickListener implements AdapterView.OnItemClickListener {
     private final Context context;
