@@ -36,6 +36,11 @@ public class PhrasesFragment extends Fragment {
     }
 
     @Override
+    public String toString() {
+        return "Phrases";
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
         onWordItemClickListener.stopPlayingMedia();

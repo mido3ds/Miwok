@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tan_background"
     android:orientation="vertical"
-    android:id="@+id/main_pager"
     tools:context="com.example.android.miwok.Activities.MainActivity">
 
-</android.support.v4.view.ViewPager>
-<!--<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--android:orientation="vertical"-->
-    <!--tools:context="com.example.android.miwok.Activities.MainActivity">-->
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_tab_layout"
 
-    <!--<android.support.design.widget.TabLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/main_tab_layout"-->
-        <!--app:tabMode="fixed"/>-->
+        android:background="@color/primary_lighter_color"/>
 
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/main_pager"-->
-        <!--android:background="@color/tan_background"/>-->
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_pager"
+        android:background="@color/tan_background"/>
 
-<!--</android.support.v4.view.ViewPager>-->
+</LinearLayout>

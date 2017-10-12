@@ -36,6 +36,11 @@ public class NumbersFragment extends Fragment {
     }
 
     @Override
+    public String toString() {
+        return "Numbers";
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
         onWordItemClickListener.stopPlayingMedia();

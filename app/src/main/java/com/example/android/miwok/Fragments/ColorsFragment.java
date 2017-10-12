@@ -20,6 +20,11 @@ public class ColorsFragment extends Fragment {
         super();
     }
 
+    @Override
+    public String toString() {
+        return "Colors";
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

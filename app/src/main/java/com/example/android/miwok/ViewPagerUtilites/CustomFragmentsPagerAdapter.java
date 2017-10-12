@@ -14,9 +14,6 @@ public class CustomFragmentsPagerAdapter extends FragmentPagerAdapter {
     private final Fragment[] fragments = {
             new ColorsFragment(), new FamilyFragment(), new NumbersFragment(), new PhrasesFragment()
     };
-    private final CharSequence[] fragmentsTitles = {
-            "Colors", "Family", "Numbers", "Phrases"
-    };
 
     public CustomFragmentsPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -34,6 +31,6 @@ public class CustomFragmentsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return fragmentsTitles[position];
+        return fragments[position].toString();
     }
 }

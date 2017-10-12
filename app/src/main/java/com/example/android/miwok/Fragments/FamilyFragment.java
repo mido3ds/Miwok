@@ -20,6 +20,11 @@ public class FamilyFragment extends Fragment {
         super();
     }
 
+    @Override
+    public String toString() {
+        return "Family";
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
